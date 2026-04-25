@@ -16,16 +16,18 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Set the working directory
 WORKDIR /research
 
-# Install Python scientific stack
-# 'control' is vital for analyzing the stability of the steering head
+# Install Python scientific stack for the world-happiness data-science project
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir \
     numpy \
     scipy \
     matplotlib \
+    seaborn \
     pandas \
-    sympy \
-    control \
+    requests \
+    wbgapi \
+    pycountry \
+    country_converter \
     jupyterlab
 
 # Expose the Jupyter port
